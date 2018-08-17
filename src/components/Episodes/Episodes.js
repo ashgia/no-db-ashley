@@ -12,9 +12,9 @@ class Characters extends Component {
   }
 
   componentDidMount() {
-    axios.get("https://api.got.show/api/characters/:name").then(response => {
-      console.log(response); //   console.log("response: ", response.data.results);
-      //   this.setState({ characters: response.data.results });
+    axios.get("/api/episodes").then(response => {
+      console.log(response);
+      this.setState({ episodes: response.data });
     });
   }
 
