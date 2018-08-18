@@ -19,9 +19,10 @@ const addEpisodeToFavorites = (req, res, next) => {
 };
 
 const editName = (req, res, next) => {
-  favorites.forEach(
-    episode => episode.id === req.params.id && Object.assign(episode, req.body)
-  );
+  console.log(req.body);
+  //   favorites();
+
+  // episode => episode.id === req.params.id && Object.assign(episode, req.body)
 };
 
 const removeFavorite = (req, res) => {

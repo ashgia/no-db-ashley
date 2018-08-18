@@ -36,8 +36,9 @@ class Episodes extends Component {
     this.setState({ search: filter });
   }
 
-  editName = (id, name, event) => {
-    event.preventDefault();
+  editName = (id, name) => {
+    console.log(id, name);
+    // event.preventDefault();
     axios.put(`/api/episodes/${id}`, { name }).then(response => {
       this.setState({
         favorites: response.data
