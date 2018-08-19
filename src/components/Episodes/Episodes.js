@@ -20,14 +20,21 @@ class Episodes extends Component {
 
   componentDidMount() {
     axios.get("/api/episodes").then(response => {
-      console.log(response);
+      // console.log(response);
       this.setState({ episodes: response.data });
+    });
+    axios.get("/api/favorites").then(response => {
+      // console.log(response);
+      this.setState({ favorites: response.data });
     });
   }
   addEpisodeToFavorites(index) {
-    axios
-      .post("/api/episodes", this.state.episodes[index])
-      .then(response => this.setState({ favorites: response.data }));
+    // console.log(index);
+    axios.post("/api/episodes", this.state.episodes[index]).then(response => {
+      // console.log(response.data);
+      this.setState({ favorites: response.data });
+    });
+    // console.log(this.favorites);
   }
   onChangeHandler = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -55,7 +62,7 @@ class Episodes extends Component {
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     let episodesDisplay = this.state.episodes
       .filter(episode =>
         episode.name

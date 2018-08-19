@@ -6,7 +6,8 @@ const {
   getEpisodes,
   addEpisodeToFavorites,
   editName,
-  removeFavorite
+  removeFavorite,
+  displayFavorites
 } = require("./controller");
 
 const app = express();
@@ -17,6 +18,7 @@ app.get("/api/episodes", getEpisodes);
 app.post("/api/episodes", addEpisodeToFavorites);
 app.put("/api/episodes/:id", editName);
 app.delete("/api/episodes/:id", removeFavorite);
+app.get("/api/favorites", displayFavorites);
 
 app.listen(port, () => {
   console.log(`Listening on Port: ${port}`);
