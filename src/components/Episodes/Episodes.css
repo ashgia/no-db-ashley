@@ -3,6 +3,13 @@
   justify-content: space-around;
 }
 
+.titleimg {
+  background-image: url("http://pluspng.com/img-png/the-seven-kingdoms-of-westeros-are-a-dangerous-place-the-iron-throne-is-the-heart-of-power-throughout-this-expansive-realm-840.png");
+  background-attachment: fixed;
+  background-position: top center;
+  margin: 0;
+}
+
 .episodes {
   display: flex;
   flex-direction: column;
@@ -11,4 +18,13 @@
 
 .favorites {
   flex-direction: column;
+  border: 1px solid black;
+}
+
+.episodeText {
+  border: 1px solid black;
+  margin-top: 5px;
+  border-radius: 10px;
+  background-color: rgb(38, 41, 45);
+  color: white;
 }

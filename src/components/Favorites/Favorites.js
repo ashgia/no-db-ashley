@@ -26,10 +26,15 @@ class Favorites extends Component {
       // console.log(favorite._id);
       return (
         <div key={index}>
+          <div className="titleimg" />
           <div className="episodeText">
             <h5 className="episodeSeason">
-              Name: {favorite.name}, Season: {favorite.season}, Episode:
-              {favorite.nr}
+              <div className="title">Name: {favorite.name}</div>
+              <div className="season">Season: {favorite.season}</div>
+              <div className="episodenumber">
+                Episode:
+                {favorite.nr}
+              </div>
             </h5>
             <form>
               <input

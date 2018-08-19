@@ -1,3 +1,11 @@
 .App {
   text-align: center;
 }
+
+body {
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(98, 94, 94),
+    rgb(48, 50, 53)
+  );
+}

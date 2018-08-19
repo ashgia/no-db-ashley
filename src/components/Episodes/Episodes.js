@@ -95,7 +95,7 @@ class Episodes extends Component {
             onChange={e => this.filterHandler(e.target.value)}
             type="text"
           />
-          {episodesDisplay}
+          <div className="eachEpisode">{episodesDisplay}</div>
         </div>
         <div>
           <h1> Favorites: </h1>
