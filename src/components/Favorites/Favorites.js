@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import EditButton from "../EditButton/EditButton";
 import Button from "../Button/Button";
 import Input from "../Input/Input";
 import "./Favorites.css";
@@ -56,12 +55,12 @@ class Favorites extends Component {
                 placeholder="Enter New Name"
               />
 
-              {/* <input
+              {/* IGNORE <input
                 type="text"
                 onChange={e => this.changeNameHandler(e)}
                 placeholder="Enter New Name"
               /> */}
-              {/* <EditButton
+              {/* IGNORE <EditButton
                 id={favorite._id}
                 newName={this.state.newName}
                 editName={this.props.editName}
