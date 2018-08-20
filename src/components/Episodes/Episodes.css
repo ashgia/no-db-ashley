@@ -3,28 +3,70 @@
   justify-content: space-around;
 }
 
-.titleimg {
-  background-image: url("http://pluspng.com/img-png/the-seven-kingdoms-of-westeros-are-a-dangerous-place-the-iron-throne-is-the-heart-of-power-throughout-this-expansive-realm-840.png");
+.topBox {
+  display: flex;
+  margin: 0 auto;
+  justify-content: space-between;
+  position: relative;
+  top: auto;
+  background-color: #2f2e2e;
+}
+
+.topBox__button {
+  border: none;
+  color: white;
+  background: #2f2e2e;
+  transition: all 200ms;
+  outline: none;
+  font-size: 1.2em;
+  letter-spacing: 3px;
+  font-family: "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.topBox__button:hover {
+  background: white;
+  color: #2f2e2e;
+}
+
+.topImage {
+  display: flex;
+  position: relative;
+}
+
+/* .titleimg {
+  background-image: url("http://www.stickpng.com/assets/images/5847f821cef1014c0b5e48a9.png");
   background-attachment: fixed;
   background-position: top center;
   margin: 0;
-}
+} */
 
 .episodes {
-  display: flex;
+  /* display: flex; */
   flex-direction: column;
   align-items: flex-end;
 }
 
 .favorites {
   flex-direction: column;
-  border: 1px solid black;
 }
 
 .episodeText {
   border: 1px solid black;
-  margin-top: 5px;
+  margin-top: 7px;
   border-radius: 10px;
   background-color: rgb(38, 41, 45);
+  color: white;
+  font-family: Roboto;
+  padding: 10px;
+}
+
+.episodeText:hover {
+  background: white;
+  color: #2f2e2e;
+}
+
+h1 {
+  font-family: "Cinzel Decorative", cursive;
+  letter-spacing: 5px;
   color: white;
 }

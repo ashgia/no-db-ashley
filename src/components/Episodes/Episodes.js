@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
 import Favorites from "../Favorites/Favorites";
+import Input from "../Input/Input";
+import FavoritesButton from "../FavoritesButton/FavoritesButton";
 
 import "./Episodes.css";
 
@@ -28,12 +30,19 @@ class Episodes extends Component {
       this.setState({ favorites: response.data });
     });
   }
-  addEpisodeToFavorites(index) {
+  addEpisodeToFavorites(id) {
     // console.log(index);
-    axios.post("/api/episodes", this.state.episodes[index]).then(response => {
-      // console.log(response.data);
-      this.setState({ favorites: response.data });
-    });
+    let episodeIndex = this.state.episodes.findIndex(
+      episode => episode._id === id
+    );
+    if (episodeIndex !== -1) {
+      axios
+        .post("/api/episodes", this.state.episodes[episodeIndex])
+        .then(response => {
+          // console.log(response.data);
+          this.setState({ favorites: response.data });
+        });
+    }
     // console.log(this.favorites);
   }
   onChangeHandler = e => {
@@ -70,19 +79,27 @@ class Episodes extends Component {
           .includes(this.state.search)
       )
       .map((episode, index) => {
+        console.log({ episode });
         if (episode.name.includes(this.state.search)) {
           return (
             <div className="episodeText" key={index}>
+              <FavoritesButton
+                addEpisodeToFavorites={() =>
+                  this.addEpisodeToFavorites(episode._id)
+                }
+              />
+              <div className="titleimg" />
               <h5 className="episodeSeason">
-                Name: {episode.name}, Season: {episode.season}, Episode:
-                {episode.nr}
+                <div className="title">Name: {episode.name}</div>
+                <div className="season">Season: {episode.season}</div>
+                <div className="episodenumber">Episode: {episode.nr}</div>
               </h5>
-              <button
+              {/* <button
                 className="funcButton"
                 onClick={() => this.addEpisodeToFavorites(index)}
               >
                 Add to Favorites
-              </button>
+              </button> */}
             </div>
           );
         }
@@ -90,15 +107,20 @@ class Episodes extends Component {
     return (
       <div className="fullPage">
         <div className="episodes">
-          <h1> Episodes: </h1>
-          <input
+          <h1> Episodes </h1>
+          <Input
+          changed={e => this.filterHandler(e.target.value)}
+          placeholder="Search Episode"
+          />
+          {/* <input
             onChange={e => this.filterHandler(e.target.value)}
             type="text"
-          />
+            placeholder="Search Episode"
+          /> */}
           <div className="eachEpisode">{episodesDisplay}</div>
         </div>
         <div>
-          <h1> Favorites: </h1>
+          <h1> Favorites </h1>
           <Favorites
             favorites={this.state.favorites}
             editName={this.editName}

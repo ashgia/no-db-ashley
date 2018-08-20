@@ -1,0 +1,15 @@
+.episodeText {
+  border: 1px solid black;
+  margin-top: 7px;
+  border-radius: 10px;
+  background-color: rgb(38, 41, 45);
+  color: white;
+  font-family: Roboto;
+  letter-spacing: 1px;
+  width: 300px;
+}
+
+.episodeText:hover {
+  background: white;
+  color: #2f2e2e;
+}
